@@ -1,0 +1,12 @@
+{
+  "name": "TokoCeria",
+  "displayName": "TokoCeria",
+  "expo": {
+    "name": "TokoCeria",
+    "slug": "TokoCeria",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
