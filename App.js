@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import Main from './components/MainComponent';
+import Main from './MainComponents/MainComponent';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 export default function App() {
@@ -11,7 +11,9 @@ export default function App() {
       <Text>Open up.js to start working on your app!</Text>
       <Text>Open up.js to start working on your app!</Text>
       <Text>Open up.js to start working on your app!</Text>
-      <Main />
+      <View style={styles.main}>
+        <Main />
+      </View>
       <StatusBar style="auto" />
       </View>
     </ScrollView>
@@ -22,7 +24,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
 });

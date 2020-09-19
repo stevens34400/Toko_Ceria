@@ -1,20 +1,20 @@
 import React from 'react';
-import {Text, Image} from 'react-native';
 import Header from './Header';
 import Search from './Search';
 import Body from './Body';
+import Menu from './Menu';
 
 
 function Main(){
 
     return(
         <>
-            <Text>Main</Text>
             <Header />
             <Header />
+            <Menu />
             <Search />
-            <Body image='./images/milk.jpg' name='milk'/>
-            {/* <Image source={require('./images/milk.jpg')} /> */}
+            <Body image={require('./images/milk.jpg')} name='milk'/>
+            <Body image={require('./images/water.jpg')} name='water'/>
         </>
     )
 }
