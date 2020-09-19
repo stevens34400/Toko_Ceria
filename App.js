@@ -1,24 +1,52 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import Main from './MainComponents/MainComponent';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import ProductMain from './ProductsComponents/MainComponent';
+import { Button, StyleSheet, Text, View, ScrollView } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function App() {
   return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="Products" component={ProductsPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+//Home page
+function HomePage({navigation}) {
+  return(
     <ScrollView>
-      <View style={styles.container}>
-      {/*Just to set header from scrollview*/}
-      <Text>Open up.js to start working on your app!</Text>
-      <Text>Open up.js to start working on your app!</Text>
-      <Text>Open up.js to start working on your app!</Text>
+      <Button
+        title="Go to products page"
+        onPress={()=>navigation.navigate('Products')}
+      />
       <View style={styles.main}>
         <Main />
-      </View>
       <StatusBar style="auto" />
       </View>
     </ScrollView>
   );
 }
+
+//Products page
+function ProductsPage(){
+  return(
+    <ScrollView>
+      <View>
+        <ProductMain />
+        <StatusBar style="auto" />
+      </View>
+    </ScrollView>
+  )
+}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -27,3 +55,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
