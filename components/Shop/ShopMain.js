@@ -10,6 +10,7 @@ function ShopMain(){
         <Text>Product Main page</Text>
         <Search/>
         <View style={styles.product}>
+            <ProductMain id={0}/>
             <ProductMain id={1}/>
         </View>
         </>
