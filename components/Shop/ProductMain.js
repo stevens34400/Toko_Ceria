@@ -2,7 +2,7 @@ import React from 'react'
 import {StyleSheet, Image} from 'react-native'
 
 
-function ProductHome(props){
+function ProductMain(props){
     return(
         <>
             <Image
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default ProductHome;
+export default ProductMain;

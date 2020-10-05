@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, StyleSheet, View} from 'react-native'
 import Search from '../Home/Search'
-import ProductHome from './ProductHome'
+import ProductMain from './ProductMain'
 
 function ShopMain(){
     return(
@@ -9,7 +9,7 @@ function ShopMain(){
         <Text>Product Main page</Text>
         <Search/>
         <View style={styles.product}>
-            <ProductHome image={require('../Home/images/milk.jpg')}/>
+            <ProductMain image={require('../Home/images/milk.jpg')}/>
         </View>
         </>
     )
