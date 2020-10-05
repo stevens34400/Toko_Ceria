@@ -13,8 +13,8 @@ function Main(){
             <Header />
             <Menu />
             <Search />
-            <Body image={require('./images/milk.jpg')} name='milk'/>
-            <Body image={require('./images/water.jpg')} name='water'/>
+            <Body id={0}/>
+            <Body id={1}/>
         </>
     )
 }

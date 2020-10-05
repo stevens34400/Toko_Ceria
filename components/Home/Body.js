@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, Image, StyleSheet} from 'react-native';
+import products from '../../shared/images'
 
 
 function Body(props){
@@ -9,9 +10,9 @@ function Body(props){
         <>
             <Image 
                 style={styles.stockimage}
-                source = {props.image}
+                source = {products[props.id].image}
             />
-            <Text>{props.name}</Text>
+            <Text>{products[props.id].name}</Text>
         </>
     )
 }
@@ -19,8 +20,8 @@ function Body(props){
 const styles = StyleSheet.create({
     stockimage: {
         resizeMode: "contain",
-        height: 600,
-        width: 600,
+        height: 300,
+        width: 300,
     },
 });
 

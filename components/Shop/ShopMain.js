@@ -4,12 +4,13 @@ import Search from '../Home/Search'
 import ProductMain from './ProductMain'
 
 function ShopMain(){
+    var i = 0;
     return(
         <>
         <Text>Product Main page</Text>
         <Search/>
         <View style={styles.product}>
-            <ProductMain image={require('../Home/images/milk.jpg')}/>
+            <ProductMain id={1}/>
         </View>
         </>
     )

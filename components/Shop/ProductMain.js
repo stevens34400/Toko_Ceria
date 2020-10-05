@@ -1,15 +1,17 @@
 import React from 'react'
-import {StyleSheet, Image} from 'react-native'
-
+import {StyleSheet, Image, Text} from 'react-native'
+import products from '../../shared/images'
 
 function ProductMain(props){
     return(
         <>
-            <Image
-                style={styles.product} 
-                source={props.image}
+            <Image 
+                style={styles.product}
+                source = {products[props.id].image}
             />
-        </>
+            <Text>{products[props.id].name}</Text>
+            <Text>{products.length}</Text>
+            </>
     )
 }
 
