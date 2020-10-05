@@ -1,10 +1,19 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, StyleSheet} from 'react-native';
 
 function Header(){
     return(
-        <Text>Toko Ceria</Text>
+        <Text style={styles.Header} >Toko Ceria</Text>
     )
 }
+
+const styles = StyleSheet.create({
+    Header: {
+      color: '#0005',
+      textAlign: 'center',
+      textTransform: 'capitalize',
+      fontSize: 50,
+    },
+  });
 
 export default Header;
