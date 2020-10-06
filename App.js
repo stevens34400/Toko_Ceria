@@ -14,7 +14,7 @@ function App() {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomePage} />
-        <Tab.Screen name="Products" component={ShopPage} />
+        <Tab.Screen name="Shop" component={ShopPage} />
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -59,7 +59,7 @@ function FAQ(){
 const styles = StyleSheet.create({
   android: {
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? 30 : 0
+    paddingTop: Platform.OS === 'android' ? 30 : 0,
   },
 
   home: {

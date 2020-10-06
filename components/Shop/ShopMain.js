@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     product: {
         justifyContent: 'center',
         alignItems: 'center',
+        paddingBottom: 30
     }
 })
 

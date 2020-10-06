@@ -1,20 +1,25 @@
 import React from 'react'
-import {StyleSheet, Image, Text} from 'react-native'
+import {StyleSheet, Image, Text, View} from 'react-native'
 import products from '../../shared/images'
 
 function ProductMain({category}){
 
     var indexes = GetAllIndex(products,category);
     
+
     const result = indexes.map(
         (value)=>{
             return(
                 <>
+                <View key={products[value].id}>
                     <Image
                         style={styles.product}
                         source={products[value].image}
                     />
-                    <Text>{products[value].name}</Text>
+                    <Text style={styles.product_name}>
+                        {products[value].name}
+                    </Text>
+                </View>
                 </>
             )
         }
@@ -44,6 +49,10 @@ const styles = StyleSheet.create({
         height: 300,
         width: 300,
     },
+
+    product_name: {
+        textAlign: 'center'
+    }
 })
 
 

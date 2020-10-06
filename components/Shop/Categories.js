@@ -15,11 +15,12 @@ function Categories(props){
         <>
             <Picker
                 selectedValue={props.select}
-                onValueChange={(itemValue,value)=>{props.setSelect(itemValue)}}
+                onValueChange={(itemValue)=>{props.setSelect(itemValue)}}
             >
                 <Picker.Item label='drink' value='drink'/>
                 <Picker.Item label='gas' value='gas'/>
-                {/* <Picker.item label='drink2' value='drink2'/> */}
+                <Picker.item label='drink2' value='drink2'/>
+                <Picker.item label='sanitaries' value='sanitaries'/>
                 {/* {console.log(select)} */}
             </Picker>
             

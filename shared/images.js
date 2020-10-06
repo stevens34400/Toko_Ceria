@@ -19,6 +19,12 @@ const products =
             name: 'gas tank',
             category: 'gas',
             image: require('./images/gastank.jpg'),
+        },
+
+        {
+            id: 3,
+            name: 'toilet paper',
+            category: 'sanitaries',
         }
     ]
 
