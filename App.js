@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, StyleSheet, View, ScrollView, Platform} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {AntDesign} from '@expo/vector-icons';
 
 import Main from './components/Home/MainComponent';
 import ShopMain from './components/Shop/ShopMain';
@@ -12,7 +13,28 @@ const Tab = createBottomTabNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={({route})=>({
+          tabBarIcon: ({focused, color, size})=>{
+            let iconName;
+
+            if(route.name==='Home'){
+              iconName="home";
+            }
+            else if(route.name==='Shop'){
+              iconName="shoppingcart"
+            }
+
+            return <AntDesign name={iconName} size={size} color={color}/>;
+          },
+        })}
+
+        tabBarOptions={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray'
+        }}
+          
+      >
         <Tab.Screen name="Home" component={HomePage} />
         <Tab.Screen name="Shop" component={ShopPage} />
       </Tab.Navigator>
