@@ -1,9 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Picker} from '@react-native-community/picker'
-import {TextView} from 'react-native'
 
 function Menu(){
     const [select, setSelect]=useState("test");
+
+    // useEffect(()=>{
+    //     console.log(select)
+    // })
 
     return(
         <>

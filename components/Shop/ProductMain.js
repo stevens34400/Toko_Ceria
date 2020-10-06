@@ -2,31 +2,25 @@ import React from 'react'
 import {StyleSheet, Image, Text} from 'react-native'
 import products from '../../shared/images'
 
-function ProductMain(props){
+function ProductMain({category}){
 
-    var indexes = GetAllIndex(products,'drink');
+    var indexes = GetAllIndex(products,category);
     
     const result = indexes.map(
         (value)=>{
             return(
-                <Text>{products[value].id}</Text>
+                <>
+                    <Image
+                        style={styles.product}
+                        source={products[value].image}
+                    />
+                    <Text>{products[value].name}</Text>
+                </>
             )
         }
     )
 
     return result;
-
-    // return(
-    //     <>
-    //         <Image 
-    //             style={styles.product}
-    //             source = {products[props.id].image}
-    //         />
-    //         <Text>{products[props.id].name}</Text>
-    //         <Text>{products[props.id].category}</Text>
-    //         <Text>{indexes}</Text>
-    //         </>
-    // )
 }
 
 function GetAllIndex(array, category){

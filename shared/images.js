@@ -3,7 +3,7 @@ const products =
         {
             id: 0,
             name: 'milk',
-            category: 'drinks',
+            category: 'drink',
             image: require('./images/milk.jpg'),
         },
 
@@ -17,7 +17,8 @@ const products =
         {
             id: 2,
             name: 'gas tank',
-            category: 'drinks',
+            category: 'gas',
+            image: require('./images/gastank.jpg'),
         }
     ]
 
