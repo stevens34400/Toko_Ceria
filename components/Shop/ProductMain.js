@@ -5,34 +5,40 @@ import products from '../../shared/images'
 function ProductMain({category}){
 
     var indexes = GetAllIndex(products,category);
-    
+
+    // console.log(indexes);
 
     const result = indexes.map(
         (value)=>{
             return(
-                <>
                 <View key={products[value].id}>
-                    <Image
+                    <Image key={products[value].id+10}
                         style={styles.product}
                         source={products[value].image}
                     />
-                    <Text style={styles.product_name}>
+                    <Text   key={products[value].name}
+                            style={styles.product_name}>
                         {products[value].name}
                     </Text>
                 </View>
-                </>
-            )
+            )   
         }
     )
 
-    return result;
+    // console.log(result);
+    return(
+        <>
+            {result}
+        </>
+    )
+
 }
 
-function GetAllIndex(array, category){
+function GetAllIndex(products, category){
     var indexes = [];
     var i;
-    for (i = 0; i<array.length;i++){
-        if(array[i].category==category){
+    for (i = 0; i<products.length;i++){
+        if(products[i].category==category){
             indexes.push(i);
         }
     }

@@ -16,7 +16,6 @@ function ShopMain(){
             <Categories 
                 select={select}
                 setSelect={setSelection}/>
-            <Text>{select}</Text>
             <View style={styles.product}>
                 <ProductMain category={select}/>
             </View>
