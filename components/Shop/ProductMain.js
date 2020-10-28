@@ -1,10 +1,11 @@
 import React from 'react'
 import {StyleSheet, Image, Text, View} from 'react-native'
 import products from '../../shared/images'
+import ItemCount from './ItemCount'
 
-function ProductMain({category}){
+function ProductMain(props){
 
-    var indexes = GetAllIndex(products,category);
+    var indexes = GetAllIndex(products,props.category);
 
     // console.log(indexes);
 
@@ -20,6 +21,10 @@ function ProductMain({category}){
                             style={styles.product_name}>
                         {products[value].name}
                     </Text>
+                    <ItemCount 
+                        setCart={props.setCart}
+                    />
+                    
                 </View>
             )   
         }
