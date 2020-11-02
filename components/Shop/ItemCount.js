@@ -16,7 +16,7 @@ function ItemCount(props){
             <Button 
                 title="Add to Cart"
                 disabled={state<=0}
-                onPress={()=>props.setCart(state)}
+                onPress={()=>props.setCart(props.cart+state)}
             />
             <Button 
                 title="Decrement"

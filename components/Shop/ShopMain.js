@@ -6,7 +6,7 @@ import Categories from './Categories'
 import Cart from './Cart'
 
 
-function ShopMain(){
+function ShopMain(props){
     //Hook for category of product to show
     const[select, setSelection]=useState('drink');
 
@@ -17,7 +17,7 @@ function ShopMain(){
         <>
             <Text>Product Main page</Text>
             <Cart 
-                cart={cart}
+                cart={props.cart}
             />
             <Search/>
             <Categories 
@@ -26,7 +26,8 @@ function ShopMain(){
             <View style={styles.product}>
                 <ProductMain 
                     category={select}
-                    setCart={setCart}
+                    cart={props.cart}
+                    setCart={props.setCart}
                 />
             </View>
             {console.log(cart)}

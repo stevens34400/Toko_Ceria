@@ -7,8 +7,7 @@ function Cart(props){
 
     return(
         <>
-            {/* {()=>setCartItem(cartItem+props.cart)} */}
-            <Text>{cartItem}</Text>
+            {/* <Text>Number of Items in Cart: {props.cart}</Text> */}
         </>
     )
 }

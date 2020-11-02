@@ -21,7 +21,8 @@ function ProductMain(props){
                             style={styles.product_name}>
                         {products[value].name}
                     </Text>
-                    <ItemCount 
+                    <ItemCount
+                        cart={props.cart} 
                         setCart={props.setCart}
                     />
                     

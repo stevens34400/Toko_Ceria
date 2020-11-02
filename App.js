@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Button, StyleSheet, View, ScrollView, Platform} from 'react-native';
+import React, {useState} from 'react';
+import { Button, StyleSheet, View, ScrollView, Platform, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {AntDesign} from '@expo/vector-icons';
@@ -9,6 +9,8 @@ import Main from './components/Home/MainComponent';
 import ShopMain from './components/Shop/ShopMain';
 
 const Tab = createBottomTabNavigator();
+
+// const [test, setTest]=useState(0);
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
       >
         <Tab.Screen name="Home" component={HomePage} />
         <Tab.Screen name="Shop" component={ShopPage} />
+        <Tab.Screen name="Cart" component={CartPage} />
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -56,10 +59,29 @@ function HomePage({navigation}) {
 
 //Shop page
 function ShopPage({navigation}){
+  //Hook for cart items
+  const[cart, setCart]=useState(0);
+
   return(
     <ScrollView style={styles.android}>
       <View>
-        <ShopMain />
+        <Text>{cart}</Text>
+        <ShopMain
+            cart={cart}
+            setCart={setCart}
+        />
+        <StatusBar style="auto" />
+      </View>
+    </ScrollView>
+  )
+}
+
+//Cart page
+function CartPage({navigation}){
+  return(
+    <ScrollView style={styles.android}>
+      <View>
+      
         <StatusBar style="auto" />
       </View>
     </ScrollView>
