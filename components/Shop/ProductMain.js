@@ -21,22 +21,14 @@ function ProductMain(props){
                             style={styles.product_name}>
                         {products[value].name}
                     </Text>
-                    <ItemCount
-                        cart={props.cart} 
-                        setCart={props.setCart}
-                    />
+                    <ItemCount/>
                     
                 </View>
             )   
         }
     )
 
-    // console.log(result);
-    return(
-        <>
-            {result}
-        </>
-    )
+    return result;
 
 }
 

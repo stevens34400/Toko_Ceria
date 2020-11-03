@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
+import store from './app/store';
 import { Button, StyleSheet, View, ScrollView, Platform, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
+import {Provider} from 'react-redux';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {AntDesign} from '@expo/vector-icons';
 
 import Main from './components/Home/MainComponent';
 import ShopMain from './components/Shop/ShopMain';
+import CartMain from './components/Cart/CartMain';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -14,6 +18,7 @@ const Tab = createBottomTabNavigator();
 
 function App() {
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({route})=>({
@@ -42,6 +47,7 @@ function App() {
         <Tab.Screen name="Cart" component={CartPage} />
       </Tab.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 }
 
@@ -81,7 +87,7 @@ function CartPage({navigation}){
   return(
     <ScrollView style={styles.android}>
       <View>
-      
+        <CartMain/>
         <StatusBar style="auto" />
       </View>
     </ScrollView>

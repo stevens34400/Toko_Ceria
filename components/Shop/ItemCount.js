@@ -1,13 +1,19 @@
 import React, {useState} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import {Text, Button} from 'react-native'
+import {setAmount, selectCount} from '../Cart/CartSlice'
 
 function ItemCount(props){
     //Set state
     const [state, setState]=useState(0);
+
+    const count = useSelector(selectCount);
+    const dispatch = useDispatch();
     
     return(
 
         <>
+            <Text>count: {count}</Text>
             <Text>{state}</Text>
             <Button
                 title="Increment"
@@ -16,7 +22,7 @@ function ItemCount(props){
             <Button 
                 title="Add to Cart"
                 disabled={state<=0}
-                onPress={()=>props.setCart(props.cart+state)}
+                onPress={()=>dispatch(setAmount(state))}
             />
             <Button 
                 title="Decrement"
