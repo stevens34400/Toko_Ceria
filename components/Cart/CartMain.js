@@ -1,15 +1,13 @@
 import React, {useState} from 'react'
 import {useSelector, useDispatcher} from 'react-redux'
 import {Text} from 'react-native'
-import {selectCount} from './CartSlice'
+import CartItem from './CartItem'
 
 function CartMain(props){
-    //Number of items in cart
-    const cartCount = useSelector(selectCount);
 
     return(
         <>
-            <Text>Cart Count: {cartCount}</Text>
+            <CartItem/>
         </>
     )
 }

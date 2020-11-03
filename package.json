@@ -30,7 +30,9 @@
     "react-native-unimodules": "~0.10.1",
     "react-native-web": "~0.11.7",
     "react-redux": "^7.2.2",
-    "react-select": "^3.1.0"
+    "react-select": "^3.1.0",
+    "remote-redux-devtools": "^0.5.16",
+    "remotedev-app": "^0.10.12"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",

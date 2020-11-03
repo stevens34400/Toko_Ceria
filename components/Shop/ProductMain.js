@@ -21,7 +21,9 @@ function ProductMain(props){
                             style={styles.product_name}>
                         {products[value].name}
                     </Text>
-                    <ItemCount/>
+                    <ItemCount
+                        item={value}
+                    />
                     
                 </View>
             )   
