@@ -71,7 +71,6 @@ function ShopPage({navigation}){
   return(
     <ScrollView style={styles.android}>
       <View>
-        <Text>{cart}</Text>
         <ShopMain
             cart={cart}
             setCart={setCart}
