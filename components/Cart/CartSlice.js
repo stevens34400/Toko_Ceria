@@ -1,9 +1,9 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, nanoid} from '@reduxjs/toolkit';
 
 const initialState = [
     {id: 1, count:0},
-    {id: 2, count: 1},
-    {id: 3, count: 1},
+    {id: 2, count: 0},
+    {id: 3, count: 0},
     {id: 4, count: 0}
 ]
 
@@ -12,19 +12,20 @@ export const slice = createSlice({
     name:'cart',
     initialState,
     reducers:{
-        setAmount: (state,action) => {
-            state[0].count += action.payload;
-            console.log('id: '+action.payload.id);
-            console.log('action '+action.payload);
-        },
+        setAmount: (state,action)=> {
+            const {id, count} = action.payload;
+            state[id].count += count;
+            // console.log('id:(Cartslice) '+id);
+            // console.log('count(Cartslice): '+count)
+        }
+        
+        
         
     }
 }
 );
 
-console.log(slice.actions)
-export const {setAmount}= slice.actions;
 
-export const selectCount = (state) => state.cart.id;
+export const {setAmount}= slice.actions;
 
 export default slice.reducer;

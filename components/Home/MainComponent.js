@@ -10,7 +10,6 @@ function Main(){
     return(
         <>
             <Header />
-            <Header />
             <Menu />
             <Search />
             <Body id={0}/>

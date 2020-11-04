@@ -9,7 +9,6 @@ function CartItem(props){
     const cartItems = useSelector(state => state.cart);
 
     var renderCart = getItems(cartItems);
-    console.log('cartItem '+renderCart);
 
     const finalCart = renderCart.map(
         (value)=>{

@@ -12,7 +12,7 @@ function ShopMain(props){
 
     return(
         <>
-            <Text>Product Main page</Text>
+            <Text>Shop Main page</Text>
             <Search/>
             <Categories 
                 select={select}

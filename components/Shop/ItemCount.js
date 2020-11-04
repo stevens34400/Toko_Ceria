@@ -2,22 +2,18 @@ import React, {useState} from 'react'
 import {createAction} from '@reduxjs/toolkit'
 import {useSelector, useDispatch} from 'react-redux'
 import {Text, Button} from 'react-native'
-import {selectCount} from '../Cart/CartSlice'
+import {setAmount, selectCount} from '../Cart/CartSlice'
 
 function ItemCount(props){
     //Set state
     const [state, setState]=useState(0);
 
-    const count = useSelector(selectCount);
     const dispatch = useDispatch();
-    
-    const setAmount = createAction('setAmount')
-    let action = setAmount;
 
     return(
 
         <>
-            <Text>count: {props.item}</Text>
+            <Text>ID: {props.item}</Text>
             <Text>{state}</Text>
             <Button
                 title="Increment"
@@ -26,7 +22,7 @@ function ItemCount(props){
             <Button 
                 title="Add to Cart"
                 disabled={state<=0}
-                onPress={()=>dispatch(setAmount(5))}
+                onPress={()=>dispatch(setAmount({id: props.item,count: state}))}
             />
             <Button 
                 title="Decrement"
